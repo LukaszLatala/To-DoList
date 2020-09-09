@@ -5,13 +5,9 @@ const addTodoInput = document.querySelector("todo-form__input");
 const todos = [];
 
 class Todo {
-  // w klasie sa metody. w naszym przypadku metoda construktor, ktora przyjmuje jakies parametry
-  // załozenie jest takie. Dodawaj funkcje do prototypu a wlasciwosci pisz w construktorze
   constructor(todoName) {
     this.createTodo(todoName);
   }
-
-  //   to jest funkcja
 
   createTodo(todoName) {
     const todoWrapper = document.createElement("div");
