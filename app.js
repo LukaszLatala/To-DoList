@@ -1,37 +1,34 @@
-const todosWrapper = document.querySelector("todos__wrapper");
-const addTodoBtn = document.querySelector("todo-form__button");
-const addTodoInput = document.querySelector("todo-form__input");
+// pobrane elementy
+const todosWrapper = document.querySelector("ul.add");
+const addTodoBtn = document.querySelector(".todo-form__button");
+const addTodoInput = document.querySelector(".todo-form__input");
 
-const todos = [];
+const listItems = document.getElementsByClassName("task");
+// funkcja
 
-class Todo {
-  constructor(todoName) {
-    this.createTodo(todoName);
-  }
+const removeTask = (e) => {
+  e.target.parentNode.remove();
+};
 
-  createTodo(todoName) {
-    const todoWrapper = document.createElement("div");
-    todoWrapper.classList.add("todo__wrapper");
+const addItems = (e) => {
+  e.preventDefault();
 
-    const todoInput = document.createElement("input");
-    todoInput.classList.add("todo__input");
-    todoInput.type = "text";
-    todoInput.disabled = true;
-    todoInput.value = todoName;
+  const titleTask = addTodoInput.value;
+  if (!addTodoInput.value) return;
 
-    const editTodoBtn = document.createElement("button");
-    editTodo.classList.add("todo-edit__button");
-    editTodo.innerHTML = "edit";
+  const newTask = document.createElement("li");
+  newTask.className = "task";
+  const btn = document.createElement("button");
+  btn.textContent = "x";
+  btn.className = "btnRemove";
 
-    const removeTodoBtn = document.createElement("button");
-    removeTodoBtn.classList.add("todo-remove__button");
-    removeTodoBtn.innerHTML = "remove";
+  newTask.innerHTML = titleTask;
 
-    todoWrapper.appendChild(todoWrapper);
-    todoWrapper.appendChild(todoInput);
-    todoWrapper.appendChild(editTodoBtn);
-    todoWrapper.appendChild(removeTodoBtn);
-
-    const addedInputValue = addTodoInput.value;
-  }
-}
+  todosWrapper.appendChild(newTask);
+  newTask.appendChild(btn);
+  addTodoInput.value = "";
+  // nasluchiwanie
+  btn.addEventListener("click", removeTask);
+};
+// nasluchiwanie
+addTodoBtn.addEventListener("click", addItems);

@@ -1,31 +1,54 @@
 * {
-    margin: 0;
-
+  margin: 0;
 }
 
 body {
-    background-image: linear-gradient(135deg, #FFF6B7 10%, #F6416C 100%);
-    min-height: 100vh;
-    font-size: 2rem;
-    text-align: center;
+  background-image: linear-gradient(135deg, #fff6b7 10%, #f6416c 100%);
+  min-height: 100vh;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .todo-form__input,
 .todo-form__button {
-    margin: 20px 0;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: chocolate;
-    border: none;
-    font-size: 1.5rem;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px 1px black;
-    transition: .3s;
-    cursor: text;
+  margin: 20px 0;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: chocolate;
+  border: none;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 1px black;
+  transition: 0.3s;
+  cursor: text;
 }
 
 input:hover,
 input:focus,
 button:hover {
-    background-color: brown;
+  background-color: brown;
+}
+
+ul.add {
+  list-style: none;
+  color: white;
+  font-size: 2.5rem;
+}
+
+ul.add li {
+  margin-top: 20px;
+}
+
+ul.add li button {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  background-color: chocolate;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px 1px black;
+  transition: 0.3s;
+  cursor: text;
+}
+ul.add li button:hover {
+  background-color: brown;
 }
