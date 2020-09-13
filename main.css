@@ -52,3 +52,12 @@ ul.add li button {
 ul.add li button:hover {
   background-color: brown;
 }
+
+ul.search {
+  list-style: none;
+  color: white;
+  font-size: 2.5rem;
+}
+ul.search li {
+  margin-top: 20px;
+}
